@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+{% block title%}{{projeto.titulo}} | Meu Portifólio{%endblock%}
+
+{%block content%}
+    <section class="project-header">
+        <h1>{{projeto.titulo}}</h1>
+    </section>
+    
+    <section class="project-details">
+        <div class="detail-section">
+            <h3>Detalhes do projeto</h3>
+            <p>{{projeto.descricao}}</p>
+        </div>
+        
+        <div class="detail-section">
+            <h3>Tecnologias Utilizadas</h3>
+            <div class="tech-tags">
+              <p>{{projeto.tecnologia}}</p>
+            </div>
+        </div>
+        
+        <div class="project-links">
+            <a href="{{projeto.github}}" class="btn" target="_blank">
+                Ver no GitHub
+            </a>
+        </div>
+    </section>
+    
+    <style>
+        .project-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-details {
+            background-color: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .detail-section {
+            padding: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-section:last-child {
+            border-bottom: none;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: rgba(58, 134, 255, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+    </style>
+{%endblock%}

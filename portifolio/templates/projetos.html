@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+{% block title%}Projetos | Meu Portifólio{%endblock%}
+{%block content%}
+    <section class="projects">
+        <h1>Meus Projetos</h1>
+        <p class="lead">Conheça os projetos que desenvolvi com dedicação e criatividade.</p>
+        
+        <ul class="projects-list">
+            {% for key, infos in projetos.items%}
+            <li class="project-card">
+                <a href="{%url 'detalhes_projeto' id_projeto=key %}">
+                    <h3>{{infos.titulo}}</h3>
+                    <div class="project-arrow">→</div>
+                </a>
+            </li>
+            {%endfor%}
+        </ul>
+    </section>
+    
+    <style>
+        .lead {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            border: none;
+            padding: 0;
+        }
+        
+        .project-card a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card a:hover {
+            text-decoration: none;
+            background-color: #e9ecef;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--secondary);
+        }
+        
+        .project-card h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .project-arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card a:hover .project-arrow {
+            transform: translateX(5px);
+            color: var(--secondary);
+        }
+    </style>
+{%endblock%}

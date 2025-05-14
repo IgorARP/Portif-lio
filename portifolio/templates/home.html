@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{% block title%}Home | Meu Portifólio{%endblock%}
+
+{%block content%}
+    <section class="hero">
+        <h1>Sobre Mim</h1>
+        <p class="lead">Olá! Meu nome é Igor, sou Desenvolvedor apaixonado por criar soluções inovadoras e funcionais.</p>
+    </section>
+    
+    <section class="skills">
+        <h2>Habilidades</h2>
+        <ul class="skills-list">
+            {% for chave,dados in habilidades.items%}
+            <li>
+                <div class="skill-item">
+                    <span class="skill-name">{{dados.nome}}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    
+    <section class="contact"> 
+        <h2>Contatos</h2>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:idupalmieri@hotmail.com">idupalmieri@hotmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https.www.linkedin.com/in/igor-palmieri">Meu Perfil LinkedIn</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/IgorARP">Meu GitHub</a></p>
+        </div>
+    </section>
+{%endblock%}
